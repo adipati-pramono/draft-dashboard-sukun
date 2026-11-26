@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171412" />
+  <meta name="description" content="Dashboard Business Intelligence Sukun Group — analisis penjualan, keuangan, dan operasional." />
+  <title>Business Intelligence — Sukun Group</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d97706'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+      <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+    </symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+    </symbol>
+    <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      <path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/>
+    </symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/>
+      <path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+    </symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
+    </symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/>
+      <line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>
+    </symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+    </symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7"/><path d="M7 7h10v10"/>
+    </symbol>
+    <symbol id="i-arrow-down-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m7 7 10 10"/><path d="M17 7v10H7"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><polyline points="9 12 11 14 15 10"/>
+    </symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+    </symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+    </symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <div class="brand-name">SUKUN<span>GROUP</span></div>
+          <div class="brand-sub">Business Intelligence</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navigasi laporan">
+        <div class="nav-group">
+          <div class="nav-label">Ringkasan</div>
+          <a class="nav-link active" href="#overview" data-nav="overview">
+            <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Dashboard
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Penjualan</div>
+          <a class="nav-link" href="#omzet" data-nav="omzet">
+            <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>Omzet Penjualan
+          </a>
+          <a class="nav-link" href="#quantity" data-nav="quantity">
+            <svg class="icon" aria-hidden="true"><use href="#i-package"/></svg>Omzet Quantity
+          </a>
+          <a class="nav-link" href="#transaksi" data-nav="transaksi">
+            <svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg>Jumlah Transaksi
+          </a>
+          <a class="nav-link" href="#customer" data-nav="customer">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Customer Trend
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Keuangan</div>
+          <a class="nav-link" href="#piutang" data-nav="piutang">
+            <svg class="icon" aria-hidden="true"><use href="#i-credit-card"/></svg>Piutang
+          </a>
+          <a class="nav-link" href="#kas" data-nav="kas">
+            <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>Kas Masuk/Keluar
+          </a>
+          <a class="nav-link" href="#neraca" data-nav="neraca">
+            <svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg>Neraca
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Operasional</div>
+          <a class="nav-link" href="#kunjungan" data-nav="kunjungan">
+            <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Kunjungan Sales
+          </a>
+          <a class="nav-link" href="#stok" data-nav="stok">
+            <svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg>Stok Produk
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Analitik</div>
+          <a class="nav-link" href="#cabang" data-nav="cabang">
+            <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>Performa Cabang
+          </a>
+          <a class="nav-link" href="#insight" data-nav="insight">
+            <svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg>Insight
+          </a>
+          <a class="nav-link" href="#action-plan" data-nav="action-plan">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Action Plan
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="user">
+          <div class="avatar">AD</div>
+          <div>
+            <div class="user-name">Admin Sukun</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+        <div class="copy">© 2026 Sukun Group</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          </button>
+          <div class="search">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input type="search" placeholder="Cari cabang, customer, atau produk…" aria-label="Cari" />
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="period" aria-label="Tahun buku">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            <span class="period-static">Tahun Buku 2026</span>
+          </div>
+          <button class="icon-btn" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+            <span class="dot-alert"></span>
+          </button>
+          <div class="avatar sm">AD</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="page-head" id="overview">
+          <div>
+            <h1>Business Intelligence Dashboard</h1>
+            <p>Analisis terpadu penjualan, keuangan, dan operasional Sukun Group.</p>
+          </div>
+          <div class="page-actions">
+            <span class="updated"><span class="live-dot"></span>Data per 22 Nov 2026</span>
+            <button class="btn" id="btnExport">
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Unduh Laporan
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-bar" aria-label="Filter dashboard">
+          <div class="filter-group">
+            <span class="filter-label">Periode</span>
+            <div class="segmented" id="periodSeg" role="group" aria-label="Pilih periode">
+              <button type="button" data-period="all" class="active">Jan–Des</button>
+              <button type="button" data-period="h1">Jan–Jun</button>
+              <button type="button" data-period="h2">Jul–Des</button>
+              <button type="button" data-period="q4">Q4</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Cabang</span>
+            <div class="filter-select">
+              <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+              <select id="branchSelect" aria-label="Pilih cabang">
+                <option value="all">Semua Cabang</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-focus" id="focusChip" hidden>
+            <span id="focusLabel">Fokus cabang</span>
+            <button type="button" id="clearFocus" aria-label="Hapus fokus cabang">&times;</button>
+          </div>
+          <div class="filter-spacer"></div>
+          <span class="metric-hint">Snapshot piutang, stok &amp; neraca per 22 Nov 2026</span>
+          <button class="btn ghost sm" id="resetFilters" type="button">Reset</button>
+        </div>
+
+        <section class="kpi-grid" aria-label="Indikator utama">
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon amber">
+                <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>
+              </div>
+              <span class="delta pos" id="kpiOmzetDelta">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>12,4%
+              </span>
+            </div>
+            <div class="kpi-label">Omzet Penjualan</div>
+            <div class="kpi-value" id="kpiOmzetValue">Rp 4,62 M</div>
+            <div class="kpi-foot">
+              <span class="kpi-note" id="kpiOmzetNote">Jan–Des 2026 · vs 2025</span>
+              <svg class="spark" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true">
+                <polyline id="sparkOmzet" points="" stroke="#d97706" />
+              </svg>
+            </div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon indigo">
+                <svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>
+              </div>
+              <span class="delta pos" id="kpiTargetDelta">Tercapai</span>
+            </div>
+            <div class="kpi-label">Pencapaian Target</div>
+            <div class="kpi-value" id="kpiTargetValue">100,0%</div>
+            <div class="kpi-foot" style="flex-direction:column;align-items:stretch;gap:6px">
+              <span class="kpi-note" id="kpiTargetNote">Realisasi Rp 4,62 M dari target Rp 4,62 M</span>
+              <div class="kpi-progress"><i id="kpiTargetBar" style="width:100%;background:#15803d"></i></div>
+            </div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon rose">
+                <svg class="icon" aria-hidden="true"><use href="#i-credit-card"/></svg>
+              </div>
+              <span class="delta neg" id="kpiPiutangDelta">19,99% jatuh tempo</span>
+            </div>
+            <div class="kpi-label">Piutang Usaha</div>
+            <div class="kpi-value" id="kpiPiutangValue">Rp 862,4 jt</div>
+            <div class="kpi-foot" style="flex-direction:column;align-items:stretch;gap:8px">
+              <div class="aging-bar" id="kpiAgingBar">
+                <i style="width:55.66%;background:#0f766e"></i>
+                <i style="width:24.35%;background:#d97706"></i>
+                <i style="width:12.99%;background:#f59e0b"></i>
+                <i style="width:7.0%;background:#dc2626"></i>
+              </div>
+              <span class="kpi-note" id="kpiPiutangNote">Outstanding per 22 Nov 2026</span>
+            </div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon teal">
+                <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>
+              </div>
+              <span class="delta pos" id="kpiKasDelta">130,4% rasio</span>
+            </div>
+            <div class="kpi-label">Kas Bersih</div>
+            <div class="kpi-value" id="kpiKasValue">Rp 1,09 M</div>
+            <div class="kpi-foot">
+              <span class="kpi-note" id="kpiKasNote">Jan–Des 2026 · nasional</span>
+              <svg class="spark" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true">
+                <polyline id="sparkKas" points="" stroke="#0f766e" />
+              </svg>
+            </div>
+          </article>
+        </section>
+
+        <section class="health-strip" aria-label="Metrik pendukung">
+          <div class="health-item">
+            <div class="health-icon teal">
+              <svg class="icon" aria-hidden="true"><use href="#i-package"/></svg>
+            </div>
+            <div class="health-copy">
+              <span>Omzet Quantity</span>
+              <b id="healthQty">1.284.500 btg</b>
+              <small id="healthQtyNote">+8,1% vs 2025</small>
+            </div>
+          </div>
+          <div class="health-item">
+            <div class="health-icon rose">
+              <svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg>
+            </div>
+            <div class="health-copy">
+              <span>Transaksi</span>
+              <b id="healthTrx">5.979</b>
+              <small id="healthTrxNote">November 2026 · nasional</small>
+            </div>
+          </div>
+          <div class="health-item">
+            <div class="health-icon indigo">
+              <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
+            </div>
+            <div class="health-copy">
+              <span>Customer Aktif</span>
+              <b id="healthCustomer">343</b>
+              <small id="healthCustomerNote">72 baru bulan ini</small>
+            </div>
+          </div>
+          <div class="health-item">
+            <div class="health-icon amber">
+              <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+            </div>
+            <div class="health-copy">
+              <span>Perlu Restock</span>
+              <b id="healthStock">2 SKU</b>
+              <small id="healthStockNote">1 kritis · 1 menipis</small>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid">
+          <section class="card span-7" id="omzet" aria-labelledby="h-omzet">
+            <div class="card-head">
+              <div>
+                <h2 id="h-omzet">Omzet Penjualan</h2>
+                <p id="omzetSub">Realisasi vs target bulanan — nasional</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge soft-amber" id="omzetBadge">Rp 4,62 M</span>
+                <a class="card-link" href="omzet-detail.html#metrik=penjualan&amp;pov=produk">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chartOmzet" aria-label="Grafik omzet penjualan bulanan" role="img"></canvas>
+            </div>
+            <div class="metric-strip">
+              <div><span>Realisasi</span><b id="omzetMetricReal">Rp 4,62 M</b></div>
+              <div><span>Target</span><b id="omzetMetricTarget">Rp 4,62 M</b></div>
+              <div><span>Selisih</span><b id="omzetMetricGap">+ Rp 1 jt</b></div>
+            </div>
+          </section>
+
+          <section class="card span-5" id="quantity" aria-labelledby="h-quantity">
+            <div class="card-head">
+              <div>
+                <h2 id="h-quantity">Mix Produk</h2>
+                <p id="mixSub">Kontribusi produk terhadap omzet</p>
+              </div>
+              <div class="card-tools">
+                <div class="segmented" id="mixToggle" role="group" aria-label="Pilih metrik mix" style="padding:3px">
+                  <button type="button" data-mix="omzet" class="active" style="padding:5px 9px;font-size:11px">Omzet</button>
+                  <button type="button" data-mix="qty" style="padding:5px 9px;font-size:11px">Qty</button>
+                </div>
+                <a class="card-link" href="omzet-detail.html#metrik=penjualan&amp;pov=produk">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="piutang-body">
+              <div class="donut">
+                <canvas id="chartMix" aria-label="Grafik komposisi produk" role="img"></canvas>
+                <div class="donut-center">
+                  <b id="mixCenter">Rp 4,62 M</b>
+                  <span id="mixCenterLabel">Total omzet</span>
+                </div>
+              </div>
+              <ul class="legend" id="mixLegend"></ul>
+            </div>
+          </section>
+
+          <section class="card span-5" id="transaksi" aria-labelledby="h-transaksi">
+            <div class="card-head">
+              <div>
+                <h2 id="h-transaksi">Jumlah Transaksi</h2>
+                <p id="transaksiSub">Volume transaksi harian — November 2026</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral" id="trxBadge">5.979 transaksi</span>
+                <a class="card-link" href="transaksi-detail.html#pov=harian">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="chart-box sm">
+              <canvas id="chartTransaksi" aria-label="Grafik jumlah transaksi harian" role="img"></canvas>
+            </div>
+          </section>
+
+          <section class="card span-7" id="customer" aria-labelledby="h-customer">
+            <div class="card-head">
+              <div>
+                <h2 id="h-customer">Customer Trend</h2>
+                <p id="customerSub">Pelanggan baru vs repeat per bulan</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge ok" id="customerBadge">343 aktif</span>
+                <a class="card-link" href="customer-detail.html#pov=bulanan">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="chips">
+              <div class="chip"><b id="customerActive">343</b><span>Pelanggan aktif</span></div>
+              <div class="chip"><b id="customerNew">72</b><span>Baru bulan ini</span></div>
+              <div class="chip"><b id="customerRepeat">79,0%</b><span>Repeat rate</span></div>
+            </div>
+            <div class="chart-box sm">
+              <canvas id="chartCustomer" aria-label="Grafik tren pelanggan baru dan repeat" role="img"></canvas>
+            </div>
+          </section>
+
+          <section class="card span-5" id="piutang" aria-labelledby="h-piutang">
+            <div class="card-head">
+              <div>
+                <h2 id="h-piutang">Piutang</h2>
+                <p id="piutangSub">Analisis umur piutang usaha (aging)</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral" id="piutangBadge">Total Rp 862,4 jt</span>
+                <a class="card-link" href="piutang-detail.html#pov=cabang">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="piutang-body">
+              <div class="donut">
+                <canvas id="chartPiutang" aria-label="Grafik komposisi umur piutang" role="img"></canvas>
+                <div class="donut-center">
+                  <b id="piutangCenter">Rp 862,4 jt</b>
+                  <span>Total piutang</span>
+                </div>
+              </div>
+              <ul class="legend" id="agingLegend"></ul>
+            </div>
+            <div class="debtors" id="debtorList">
+              <div class="mini-head"><span>Piutang terbesar</span><span>Nilai</span></div>
+            </div>
+          </section>
+
+          <section class="card span-7" id="kas" aria-labelledby="h-kas">
+            <div class="card-head">
+              <div>
+                <h2 id="h-kas">Kas Masuk / Keluar</h2>
+                <p id="kasSub">Arus kas bulanan — nasional</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge ok" id="kasBadge">Net Rp 1,09 M</span>
+                <a class="card-link" href="kas-detail.html#pov=cabang">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chartKas" aria-label="Grafik kas masuk dan kas keluar" role="img"></canvas>
+            </div>
+            <div class="metric-strip">
+              <div><span>Kas Masuk</span><b id="kasMasuk">Rp 4,66 M</b></div>
+              <div><span>Kas Keluar</span><b id="kasKeluar">Rp 3,58 M</b></div>
+              <div><span>Kas Bersih</span><b id="kasNet">Rp 1,09 M</b></div>
+            </div>
+          </section>
+
+          <section class="card span-12" id="neraca" aria-labelledby="h-neraca">
+            <div class="card-head">
+              <div>
+                <h2 id="h-neraca">Neraca Ringkas</h2>
+                <p>Posisi keuangan konsolidasi per 31 Desember 2026</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge ok">
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Seimbang
+                </span>
+                <a class="card-link" href="neraca-detail.html#pov=aset">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="balance-grid">
+              <div class="balance-col">
+                <h3>Aset</h3>
+                <b id="balAset">Rp 9,60 M</b>
+                <div class="progress"><i style="width:37.4%;background:#0f766e"></i></div>
+                <small><span>Aset lancar</span><span id="balAsetCurrent">Rp 3,59 M · 37,4%</span></small>
+                <small><span>Aset tetap neto</span><span id="balAsetFixed">Rp 6,01 M · 62,6%</span></small>
+              </div>
+              <div class="balance-col">
+                <h3>Kewajiban</h3>
+                <b id="balKewajiban">Rp 2,89 M</b>
+                <div class="progress"><i style="width:34.3%;background:#be123c"></i></div>
+                <small><span>Jangka pendek</span><span id="balLiabCurrent">Rp 0,99 M · 34,3%</span></small>
+                <small><span>Jangka panjang</span><span id="balLiabLong">Rp 1,90 M · 65,7%</span></small>
+              </div>
+              <div class="balance-col">
+                <h3>Ekuitas</h3>
+                <b id="balEkuitas">Rp 6,71 M</b>
+                <div class="progress"><i style="width:59.6%;background:#4338ca"></i></div>
+                <small><span>Modal disetor</span><span id="balCapital">Rp 4,00 M · 59,6%</span></small>
+                <small><span>Laba ditahan</span><span id="balRetained">Rp 2,71 M · 40,4%</span></small>
+              </div>
+            </div>
+            <div class="ratio-grid">
+              <div class="ratio-item"><span>Current Ratio</span><b id="ratioCurrent">3,63x</b><small>Aset lancar / kewajiban lancar</small></div>
+              <div class="ratio-item"><span>Cash Ratio</span><b id="ratioCash">1,26x</b><small>Kas / kewajiban lancar</small></div>
+              <div class="ratio-item"><span>Debt to Equity</span><b id="ratioDer">43,1%</b><small>Kewajiban / ekuitas</small></div>
+              <div class="ratio-item"><span>Asset Turnover</span><b id="ratioTurnover">0,48x</b><small>Omzet / total aset</small></div>
+            </div>
+            <div class="n-note">Aset = Kewajiban + Ekuitas. Tidak ada selisih posisi keuangan.</div>
+          </section>
+
+          <section class="card span-5" id="kunjungan" aria-labelledby="h-kunjungan">
+            <div class="card-head">
+              <div>
+                <h2 id="h-kunjungan">Kunjungan Sales</h2>
+                <p id="kunjunganSub">Target dan realisasi kunjungan per cabang — November 2026</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge soft-amber" id="visitBadge">100,2% target</span>
+                <a class="card-link" href="kunjungan-detail.html#pov=cabang">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="chips">
+              <div class="chip"><b id="visitTotal">601</b><span>Total kunjungan</span></div>
+              <div class="chip"><b id="visitRate">100,2%</b><span>Pencapaian</span></div>
+              <div class="chip"><b id="visitBest">Jakarta</b><span>Cabang terbaik</span></div>
+            </div>
+            <div class="chart-box sm">
+              <canvas id="chartKunjungan" aria-label="Grafik kunjungan per cabang" role="img"></canvas>
+            </div>
+          </section>
+
+          <section class="card span-7" id="stok" aria-labelledby="h-stok">
+            <div class="card-head">
+              <div>
+                <h2 id="h-stok">Stok Produk</h2>
+                <p>Posisi stok gudang (ball) — snapshot 22 Nov 2026</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge warn" id="stockBadge">2 perlu restock</span>
+                <a class="card-link" href="stok-detail.html#pov=produk">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Produk</th>
+                    <th class="num">Stok</th>
+                    <th>Level</th>
+                    <th class="num">Min.</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="stockBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card span-7" id="topcustomer" aria-labelledby="h-topcustomer">
+            <div class="card-head">
+              <div>
+                <h2 id="h-topcustomer">Top Customer</h2>
+                <p id="topCustomerSub">Pelanggan dengan kontribusi omzet terbesar</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral" id="topCustomerBadge">8 customer</span>
+                <label class="table-search">
+                  <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                  <input type="search" id="customerSearch" placeholder="Cari customer…" aria-label="Cari customer" />
+                </label>
+                <a class="card-link" href="customer-detail.html#pov=segmen">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table detail-table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th class="num">Omzet</th>
+                    <th class="num">Share</th>
+                    <th class="num">Piutang</th>
+                    <th>Pertumbuhan</th>
+                  </tr>
+                </thead>
+                <tbody id="topCustomerBody"></tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span id="topCustomerFoot">Menampilkan 8 dari 8 customer</span>
+              <span>Omzet periode terpilih</span>
+            </div>
+          </section>
+
+          <section class="card span-5" id="sales" aria-labelledby="h-sales">
+            <div class="card-head">
+              <div>
+                <h2 id="h-sales">Performa Sales</h2>
+                <p>Kontribusi omzet dan kunjungan — nasional</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral">5 sales</span>
+                <a class="card-link" href="kunjungan-detail.html#pov=sales">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="leader-list" id="salesList"></div>
+          </section>
+
+          <section class="card span-12" id="cabang" aria-labelledby="h-cabang">
+            <div class="card-head">
+              <div>
+                <h2 id="h-cabang">Performa Cabang</h2>
+                <p id="cabangSub">Omzet, pertumbuhan, piutang, dan arus kas per cabang — Jan–Des 2026</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral" id="cabangBadge">6 cabang</span>
+                <label class="table-search">
+                  <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                  <input type="search" id="branchSearch" placeholder="Cari cabang…" aria-label="Cari cabang" />
+                </label>
+                <a class="card-link" href="omzet-detail.html#metrik=penjualan&amp;pov=cabang">Detail <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table detail-table wide" id="branchTable">
+                <thead>
+                  <tr>
+                    <th class="sortable" data-key="name">Cabang<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="omzet">Omzet<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="share">Share<span class="sort-ind">↕</span></th>
+                    <th class="sortable" data-key="growth">Pertumbuhan<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="piutang">Piutang<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="overdue">Jatuh Tempo<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="kasNet">Kas Bersih<span class="sort-ind">↕</span></th>
+                    <th class="sortable num" data-key="achievement">Target<span class="sort-ind">↕</span></th>
+                  </tr>
+                </thead>
+                <tbody id="branchBody"></tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span id="branchFoot">Menampilkan 6 dari 6 cabang</span>
+              <span>Klik baris untuk fokus cabang · klik judul kolom untuk mengurutkan</span>
+            </div>
+          </section>
+
+          <section class="card span-12" id="insight" aria-labelledby="h-insight">
+            <div class="card-head">
+              <div>
+                <h2 id="h-insight">Insight</h2>
+                <p id="insightSub">Temuan utama sesuai filter aktif</p>
+              </div>
+              <div class="card-tools">
+                <a class="card-link" href="#action-plan">Action plan <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+              </div>
+            </div>
+            <div class="insight-list" id="insightList"></div>
+          </section>
+
+          <section class="card span-12" id="action-plan" aria-labelledby="h-action-plan">
+            <div class="card-head">
+              <div>
+                <h2 id="h-action-plan">Rekomendasi Action Plan</h2>
+                <p id="actionPlanSub">Prioritas tindak lanjut berdasarkan filter aktif</p>
+              </div>
+              <div class="card-tools">
+                <span class="badge neutral" id="actionPlanBadge">9 aksi</span>
+                <a class="card-link" href="#insight">Lihat insight <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+            </div>
+            <div class="action-grid" id="actionPlanGrid"></div>
+            <div class="action-foot">
+              <span>Rekomendasi dihasilkan otomatis dari filter periode dan cabang.</span>
+              <span>Owner dan tenggat bersifat indikatif.</span>
+            </div>
+          </section>
+      
+        </div>
+
+        <p class="page-note">Dashboard BI contoh — data konsisten dengan draft Sukun Group. Nilai dalam juta rupiah kecuali disebutkan.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor/chart.umd.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

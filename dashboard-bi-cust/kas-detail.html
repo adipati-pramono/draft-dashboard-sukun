@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171412" />
+  <title>Detail Kas Masuk/Keluar — Sukun Group</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d97706'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+      <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+    </symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+    </symbol>
+    <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      <path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/>
+    </symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/>
+      <path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+    </symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
+    </symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/>
+      <line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>
+    </symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <div class="brand-name">SUKUN<span>GROUP</span></div>
+          <div class="brand-sub">Business Intelligence</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navigasi laporan">
+        <div class="nav-group">
+          <div class="nav-label">Ringkasan</div>
+          <a class="nav-link" href="index.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Dashboard
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Penjualan</div>
+          <a class="nav-link" href="omzet-detail.html#metrik=penjualan&amp;pov=produk" data-nav="omzet">
+            <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>Omzet Penjualan
+          </a>
+          <a class="nav-link" href="omzet-detail.html#metrik=quantity&amp;pov=produk" data-nav="quantity">
+            <svg class="icon" aria-hidden="true"><use href="#i-package"/></svg>Omzet Quantity
+          </a>
+          <a class="nav-link" href="transaksi-detail.html#pov=harian" data-nav="transaksi">
+            <svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg>Jumlah Transaksi
+          </a>
+          <a class="nav-link" href="customer-detail.html#pov=bulanan" data-nav="customer">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Customer Trend
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Keuangan</div>
+          <a class="nav-link" href="piutang-detail.html#pov=cabang" data-nav="piutang">
+            <svg class="icon" aria-hidden="true"><use href="#i-credit-card"/></svg>Piutang
+          </a>
+          <a class="nav-link active" href="kas-detail.html#pov=cabang" data-nav="kas">
+            <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>Kas Masuk/Keluar
+          </a>
+          <a class="nav-link" href="neraca-detail.html#pov=aset" data-nav="neraca">
+            <svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg>Neraca
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Operasional</div>
+          <a class="nav-link" href="kunjungan-detail.html#pov=sales" data-nav="kunjungan">
+            <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Kunjungan Sales
+          </a>
+          <a class="nav-link" href="stok-detail.html#pov=produk" data-nav="stok">
+            <svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg>Stok Produk
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="user">
+          <div class="avatar">AD</div>
+          <div>
+            <div class="user-name">Admin Sukun</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+        <div class="copy">© 2026 Sukun Group</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          </button>
+          <div class="search">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input type="search" placeholder="Cari laporan, produk, atau pelanggan…" aria-label="Cari" />
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="period">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            <span class="period-static">Jan – Des 2026</span>
+          </div>
+          <button class="icon-btn" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+            <span class="dot-alert"></span>
+          </button>
+          <div class="avatar sm">AD</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Dashboard</a>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          <span class="current">Kas Masuk/Keluar</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Detail Kas Masuk/Keluar</h1>
+            <p>Analisis arus kas menurut cabang, kategori, dan bulan.</p>
+          </div>
+          <div class="page-actions">
+            <a class="btn ghost" href="index.html#kas">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>Kembali
+            </a>
+            <button class="btn" id="btnExport">
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Unduh Laporan
+            </button>
+          </div>
+        </div>
+
+        <div class="pov-tabs" role="tablist" aria-label="Sudut pandang laporan">
+          <button type="button" class="pov-tab active" data-pov="cabang" role="tab">Cabang <span class="count">6</span></button>
+          <button type="button" class="pov-tab" data-pov="kategori" role="tab">Kategori <span class="count">8</span></button>
+          <button type="button" class="pov-tab" data-pov="bulanan" role="tab">Bulanan <span class="count">12</span></button>
+        </div>
+
+        <section class="kpi-grid" aria-label="Ringkasan arus kas">
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon teal">
+                <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>
+              </div>
+            </div>
+            <div class="kpi-label">Kas Masuk</div>
+            <div class="kpi-value" id="kpiMasuk">Rp 4,66 M</div>
+            <div class="kpi-foot"><span class="kpi-note">Penerimaan Jan–Des 2026</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon rose">
+                <svg class="icon" aria-hidden="true"><use href="#i-credit-card"/></svg>
+              </div>
+            </div>
+            <div class="kpi-label">Kas Keluar</div>
+            <div class="kpi-value" id="kpiKeluar">Rp 3,58 M</div>
+            <div class="kpi-foot"><span class="kpi-note">Pengeluaran Jan–Des 2026</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon amber">
+                <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>
+              </div>
+            </div>
+            <div class="kpi-label">Kas Bersih</div>
+            <div class="kpi-value" id="kpiNet">Rp 1,09 M</div>
+            <div class="kpi-foot"><span class="growth up">+5,6%</span><span class="kpi-note">vs periode lalu</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <div class="kpi-icon indigo">
+                <svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg>
+              </div>
+            </div>
+            <div class="kpi-label">Rasio Masuk/Keluar</div>
+            <div class="kpi-value" id="kpiRasio">130,4%</div>
+            <div class="kpi-foot"><span class="kpi-note">Arus kas positif</span></div>
+          </article>
+        </section>
+
+        <div class="grid">
+          <section class="card span-7">
+            <div class="card-head">
+              <div>
+                <h2 id="chartTitle">Arus Kas per Cabang</h2>
+                <p id="chartSub">Kas masuk dan keluar per cabang (juta rupiah)</p>
+              </div>
+              <span class="badge neutral" id="chartBadge">Cabang Jakarta</span>
+            </div>
+            <div class="chart-box tall">
+              <canvas id="chartFlow" aria-label="Grafik arus kas" role="img"></canvas>
+            </div>
+          </section>
+
+          <section class="card span-5">
+            <div class="card-head">
+              <div>
+                <h2 id="compTitle">Kontribusi Cabang</h2>
+                <p id="compSub">Kontribusi kas bersih per cabang</p>
+              </div>
+            </div>
+            <div class="contrib-list" id="flowList"></div>
+            <div class="table-foot">
+              <span id="compFoot">Total kas bersih Rp 1,09 M</span>
+              <span>Proporsi arus kas</span>
+            </div>
+          </section>
+
+          <section class="card span-12">
+            <div class="card-head">
+              <div>
+                <h2 id="tableTitle">Rincian Arus Kas per Cabang</h2>
+                <p id="tableSub">Kas masuk dan keluar per cabang — Jan–Des 2026</p>
+              </div>
+              <label class="table-search">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                <input type="search" id="tableSearch" placeholder="Cari cabang…" aria-label="Cari data" />
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="table detail-table" id="detailTable">
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span id="tableCount">Menampilkan 6 dari 6 cabang</span>
+              <span>Klik judul kolom untuk mengurutkan</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor/chart.umd.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const BRANCHES = [
+      { name: 'Cabang Jakarta', masuk: 1280, keluar: 980 },
+      { name: 'Cabang Surabaya', masuk: 1020, keluar: 770 },
+      { name: 'Cabang Semarang', masuk: 860, keluar: 660 },
+      { name: 'Cabang Bandung', masuk: 710, keluar: 545 },
+      { name: 'Cabang Medan', masuk: 512, keluar: 402 },
+      { name: 'Cabang Makassar', masuk: 279, keluar: 218 }
+    ];
+
+    const CATEGORIES = [
+      { name: 'Penjualan Tunai', tipe: 'Masuk', nilai: 2240 },
+      { name: 'Pelunasan Piutang', tipe: 'Masuk', nilai: 1860 },
+      { name: 'Pendapatan Lain', tipe: 'Masuk', nilai: 561 },
+      { name: 'Pembelian Bahan Baku', tipe: 'Keluar', nilai: 1850 },
+      { name: 'Gaji & Tunjangan', tipe: 'Keluar', nilai: 720 },
+      { name: 'Operasional', tipe: 'Keluar', nilai: 560 },
+      { name: 'Pajak & Retribusi', tipe: 'Keluar', nilai: 285 },
+      { name: 'Pengeluaran Lain', tipe: 'Keluar', nilai: 160 }
+    ];
+
+    const MONTHLY = {
+      masuk: [310, 348, 322, 375, 360, 402, 388, 415, 398, 430, 445, 468],
+      keluar: [245, 260, 255, 288, 272, 310, 298, 315, 305, 330, 342, 355]
+    };
+
+    const MONTH_FULL = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    const PALETTE = ['#d97706', '#0f766e', '#4338ca', '#be123c', '#6d28d9', '#15803d'];
+    const AVATAR_COLORS = [
+      { bg: '#fef3c7', fg: '#92400e' },
+      { bg: '#ccfbf1', fg: '#0f766e' },
+      { bg: '#e0e7ff', fg: '#4338ca' },
+      { bg: '#ffe4e6', fg: '#be123c' },
+      { bg: '#ede9fe', fg: '#6d28d9' },
+      { bg: '#dcfce7', fg: '#15803d' }
+    ];
+
+    const TOTAL = {
+      masuk: BRANCHES.reduce((sum, row) => sum + row.masuk, 0),
+      keluar: BRANCHES.reduce((sum, row) => sum + row.keluar, 0)
+    };
+    TOTAL.net = TOTAL.masuk - TOTAL.keluar;
+
+    const params = new URLSearchParams((location.hash || '').replace(/^#/, '') || location.search);
+    const validPov = ['cabang', 'kategori', 'bulanan'];
+    let pov = validPov.includes(params.get('pov')) ? params.get('pov') : 'cabang';
+    let sortKey = null;
+    let sortDir = -1;
+    let query = '';
+    let flowChart = null;
+
+    const $ = id => document.getElementById(id);
+    const initials = name => name.replace(/[^A-Za-z0-9 .]/g, '').split(' ').filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase();
+    const avatarOf = index => AVATAR_COLORS[index % AVATAR_COLORS.length];
+    const syncUrl = () => {
+      try { history.replaceState(null, '', '#pov=' + pov); } catch (error) { /* file:// */ }
+    };
+
+    const getRows = () => {
+      if (pov === 'cabang') {
+        return BRANCHES.map((row, index) => ({
+          ...row,
+          net: row.masuk - row.keluar,
+          rasio: row.masuk / row.keluar * 100,
+          index
+        }));
+      }
+      if (pov === 'kategori') {
+        return CATEGORIES.map((row, index) => ({ ...row, index }));
+      }
+      return MONTHLY.masuk.map((masuk, index) => ({
+        name: MONTH_FULL[index],
+        masuk,
+        keluar: MONTHLY.keluar[index],
+        net: masuk - MONTHLY.keluar[index],
+        index
+      }));
+    };
+
+    const defaultKey = () => pov === 'cabang' ? 'net' : pov === 'kategori' ? 'nilai' : 'index';
+    const defaultDir = () => pov === 'bulanan' ? 1 : -1;
+    const effectiveKey = () => sortKey || defaultKey();
+    const effectiveDir = () => sortKey ? sortDir : defaultDir();
+
+    const compare = (a, b) => {
+      const key = effectiveKey();
+      const dir = effectiveDir();
+      if (key === 'name') return a.name.localeCompare(b.name, 'id') * dir;
+      return ((a[key] ?? 0) - (b[key] ?? 0)) * dir;
+    };
+
+    const sortedRows = () => getRows().sort(compare);
+    const filteredRows = () => sortedRows().filter(row => {
+      const haystack = (row.name + ' ' + (row.tipe || '')).toLowerCase();
+      return haystack.includes(query);
+    });
+
+    const renderChart = () => {
+      if (typeof Chart === 'undefined') return;
+      if (flowChart) flowChart.destroy();
+      const horizontalOptions = {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { ...legendStyle, labels: { ...legendStyle.labels, padding: 10 } }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            border: { display: false },
+            grid: { color: '#f1efeb' },
+            ticks: { color: '#a8a29e', font: { size: 10.5 }, callback: value => value + ' jt' }
+          },
+          y: {
+            border: { display: false },
+            grid: { display: false },
+            ticks: { color: '#44403c', font: { size: 11 } }
+          }
+        }
+      };
+
+      if (pov === 'cabang') {
+        const rows = getRows().sort((a, b) => b.net - a.net);
+        flowChart = new Chart($('chartFlow'), {
+          type: 'bar',
+          data: {
+            labels: rows.map(row => row.name),
+            datasets: [
+              { label: 'Kas Masuk', data: rows.map(row => row.masuk), backgroundColor: '#0f766e', borderRadius: 3, maxBarThickness: 16 },
+              { label: 'Kas Keluar', data: rows.map(row => row.keluar), backgroundColor: '#f43f5e', borderRadius: 3, maxBarThickness: 16 }
+            ]
+          },
+          options: {
+            ...horizontalOptions,
+            plugins: {
+              ...horizontalOptions.plugins,
+              tooltip: { callbacks: { label: item => ' ' + item.dataset.label + ': ' + rpJt(item.parsed.x) } }
+            }
+          }
+        });
+      } else if (pov === 'kategori') {
+        const rows = CATEGORIES.slice().sort((a, b) => b.nilai - a.nilai);
+        flowChart = new Chart($('chartFlow'), {
+          type: 'bar',
+          data: {
+            labels: rows.map(row => row.name),
+            datasets: [{
+              label: 'Nilai',
+              data: rows.map(row => row.nilai),
+              backgroundColor: rows.map(row => row.tipe === 'Masuk' ? '#0f766e' : '#f43f5e'),
+              borderRadius: 3,
+              maxBarThickness: 18
+            }]
+          },
+          options: {
+            ...horizontalOptions,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: item => ' ' + rows[item.dataIndex].tipe + ': ' + rpJt(item.parsed.x)
+                }
+              }
+            }
+          }
+        });
+      } else {
+        flowChart = new Chart($('chartFlow'), {
+          type: 'bar',
+          data: {
+            labels: MONTHS,
+            datasets: [
+              { label: 'Kas Masuk', data: MONTHLY.masuk, backgroundColor: '#0f766e', borderRadius: 3, maxBarThickness: 18, order: 2 },
+              { label: 'Kas Keluar', data: MONTHLY.keluar, backgroundColor: '#f43f5e', borderRadius: 3, maxBarThickness: 18, order: 2 },
+              {
+                type: 'line',
+                label: 'Kas Bersih',
+                data: MONTHLY.masuk.map((value, index) => value - MONTHLY.keluar[index]),
+                borderColor: '#4338ca',
+                backgroundColor: '#4338ca',
+                pointRadius: 2.5,
+                pointHoverRadius: 4,
+                borderWidth: 2,
+                tension: 0.35,
+                order: 1
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+              legend: legendStyle,
+              tooltip: { callbacks: { label: item => ' ' + item.dataset.label + ': ' + rpJt(item.parsed.y) } }
+            },
+            scales: {
+              x: gridX,
+              y: { ...gridY, ticks: { ...gridY.ticks, callback: value => value + ' jt' } }
+            }
+          }
+        });
+      }
+    };
+
+    const renderComposition = () => {
+      let items;
+      let total;
+      let footer;
+
+      if (pov === 'cabang') {
+        items = getRows()
+          .sort((a, b) => b.net - a.net)
+          .map((row, index) => ({ name: row.name, value: row.net, color: PALETTE[index % PALETTE.length] }));
+        total = TOTAL.net;
+        footer = 'Total kas bersih ' + rpJuta(TOTAL.net);
+      } else if (pov === 'kategori') {
+        items = CATEGORIES.slice()
+          .sort((a, b) => b.nilai - a.nilai)
+          .map(row => ({ name: row.name, value: row.nilai, color: row.tipe === 'Masuk' ? '#0f766e' : '#f43f5e' }));
+        total = items.reduce((sum, item) => sum + item.value, 0);
+        footer = 'Masuk ' + rpJuta(TOTAL.masuk) + ' · Keluar ' + rpJuta(TOTAL.keluar);
+      } else {
+        items = getRows()
+          .sort((a, b) => b.net - a.net)
+          .map(row => ({ name: row.name, value: row.net, color: PALETTE[row.index % PALETTE.length] }));
+        total = TOTAL.net;
+        footer = 'Total kas bersih ' + rpJuta(TOTAL.net);
+      }
+
+      if (items.length > 6) {
+        const top = items.slice(0, 5);
+        const rest = items.slice(5).reduce((sum, item) => sum + item.value, 0);
+        top.push({ name: 'Lainnya (' + (items.length - 5) + ')', value: rest, color: '#a8a29e' });
+        items = top;
+      }
+
+      $('flowList').innerHTML = items.map(item => {
+        const share = total ? item.value / total * 100 : 0;
+        return `
+          <div class="contrib-item">
+            <div class="contrib-head">
+              <span class="dot" style="background:${item.color}"></span>
+              <span>${escapeHtml(item.name)}</span>
+              <b>${rpJt(item.value)}</b>
+            </div>
+            <div class="progress"><i style="width:${Math.min(100, share).toFixed(1)}%;background:${item.color}"></i></div>
+            <div class="contrib-sub"><span>${pctText(share)} dari total</span><span></span></div>
+          </div>`;
+      }).join('');
+
+      $('compFoot').textContent = footer;
+    };
+
+    const renderTable = () => {
+      const needsAvatar = pov === 'cabang';
+      const cols = pov === 'cabang' ? [
+        { key: 'name', label: 'Cabang' },
+        { key: 'masuk', label: 'Kas Masuk', num: true },
+        { key: 'keluar', label: 'Kas Keluar', num: true },
+        { key: 'net', label: 'Kas Bersih', num: true },
+        { key: 'rasio', label: 'Rasio', num: true }
+      ] : pov === 'kategori' ? [
+        { key: 'name', label: 'Kategori' },
+        { key: 'tipe', label: 'Tipe' },
+        { key: 'nilai', label: 'Jumlah', num: true },
+        { key: null, label: 'Kontribusi', num: true }
+      ] : [
+        { key: 'name', label: 'Bulan' },
+        { key: 'masuk', label: 'Kas Masuk', num: true },
+        { key: 'keluar', label: 'Kas Keluar', num: true },
+        { key: 'net', label: 'Kas Bersih', num: true }
+      ];
+
+      $('tableHead').innerHTML = '<tr>' + cols.map(col => col.key
+        ? `<th class="sortable${col.num ? ' num' : ''}" data-key="${col.key}">${col.label}<span class="sort-ind">↕</span></th>`
+        : `<th class="num">${col.label}</th>`
+      ).join('') + '</tr>';
+
+      const rows = filteredRows();
+      const colspan = cols.length;
+
+      $('tableBody').innerHTML = rows.length
+        ? rows.map(row => {
+            if (pov === 'cabang') {
+              const avatar = avatarOf(row.index);
+              return `
+                <tr>
+                  <td>
+                    <div class="entity">
+                      <span class="entity-avatar" style="background:${avatar.bg};color:${avatar.fg}">${initials(row.name)}</span>
+                      <span class="entity-name">${escapeHtml(row.name)}</span>
+                    </div>
+                  </td>
+                  <td class="num">${rpJt(row.masuk)}</td>
+                  <td class="num">${rpJt(row.keluar)}</td>
+                  <td class="num ${row.net >= 0 ? 'positive' : 'negative'}">${rpJt(row.net)}</td>
+                  <td class="num">${pctText(row.rasio)}</td>
+                </tr>`;
+            }
+            if (pov === 'kategori') {
+              const typeTotal = row.tipe === 'Masuk' ? TOTAL.masuk : TOTAL.keluar;
+              const share = row.nilai / typeTotal * 100;
+              return `
+                <tr>
+                  <td>
+                    <div class="entity">
+                      <span class="dot" style="background:${row.tipe === 'Masuk' ? '#0f766e' : '#f43f5e'}"></span>
+                      <span class="entity-name">${escapeHtml(row.name)}</span>
+                    </div>
+                  </td>
+                  <td><span class="badge ${row.tipe === 'Masuk' ? 'ok' : 'bad'}">${row.tipe}</span></td>
+                  <td class="num"><strong>${rpJt(row.nilai)}</strong></td>
+                  <td class="num">
+                    <div class="contrib">
+                      <div class="progress"><i style="width:${Math.min(100, share).toFixed(1)}%;background:${row.tipe === 'Masuk' ? '#0f766e' : '#f43f5e'}"></i></div>
+                      <span>${pctText(share)}</span>
+                    </div>
+                  </td>
+                </tr>`;
+            }
+            return `
+              <tr>
+                <td>${escapeHtml(row.name)}</td>
+                <td class="num">${rpJt(row.masuk)}</td>
+                <td class="num">${rpJt(row.keluar)}</td>
+                <td class="num ${row.net >= 0 ? 'positive' : 'negative'}">${rpJt(row.net)}</td>
+              </tr>`;
+          }).join('')
+        : `<tr><td class="empty" colspan="${colspan}">Tidak ada data yang cocok dengan pencarian.</td></tr>`;
+
+      const meta = {
+        cabang: { singular: 'cabang', title: 'Rincian Arus Kas per Cabang', sub: 'Kas masuk dan keluar per cabang — Jan–Des 2026' },
+        kategori: { singular: 'kategori', title: 'Rincian Arus Kas per Kategori', sub: 'Penerimaan dan pengeluaran kas — Jan–Des 2026' },
+        bulanan: { singular: 'bulan', title: 'Rincian Arus Kas Bulanan', sub: 'Kas masuk, keluar, dan bersih per bulan — 2026' }
+      }[pov];
+
+      $('tableTitle').textContent = meta.title;
+      $('tableSub').textContent = meta.sub;
+      $('tableSearch').placeholder = 'Cari ' + meta.singular + '…';
+      $('tableCount').textContent = 'Menampilkan ' + rows.length + ' dari ' + getRows().length + ' ' + meta.singular;
+
+      document.querySelectorAll('#detailTable th.sortable').forEach(th => {
+        const indicator = th.querySelector('.sort-ind');
+        indicator.textContent = th.dataset.key === effectiveKey()
+          ? (effectiveDir() === 1 ? '↑' : '↓')
+          : '↕';
+      });
+    };
+
+    const renderControls = () => {
+      const topNet = getRows().sort((a, b) => b.net - a.net)[0];
+      const topKategori = CATEGORIES.slice().sort((a, b) => b.nilai - a.nilai)[0];
+      const bestMonth = getRows().sort((a, b) => b.net - a.net)[0];
+
+      document.querySelectorAll('.pov-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.pov === pov);
+      });
+      setSidebarActive('kas');
+
+      if (pov === 'cabang') {
+        $('chartTitle').textContent = 'Arus Kas per Cabang';
+        $('chartSub').textContent = 'Kas masuk dan keluar per cabang (juta rupiah)';
+        $('chartBadge').textContent = topNet.name;
+        $('compTitle').textContent = 'Kontribusi Cabang';
+        $('compSub').textContent = 'Kontribusi kas bersih per cabang';
+      } else if (pov === 'kategori') {
+        $('chartTitle').textContent = 'Arus Kas per Kategori';
+        $('chartSub').textContent = 'Penerimaan dan pengeluaran kas per kategori (juta rupiah)';
+        $('chartBadge').textContent = topKategori.name;
+        $('compTitle').textContent = 'Struktur Kategori';
+        $('compSub').textContent = 'Proporsi nilai per kategori arus kas';
+      } else {
+        $('chartTitle').textContent = 'Arus Kas Bulanan';
+        $('chartSub').textContent = 'Kas masuk, keluar, dan bersih per bulan (juta rupiah)';
+        $('chartBadge').textContent = 'Terbaik: ' + bestMonth.name;
+        $('compTitle').textContent = 'Kas Bersih Bulanan';
+        $('compSub').textContent = 'Bulan dengan kas bersih tertinggi';
+      }
+
+      syncUrl();
+    };
+
+    const renderAll = () => {
+      renderControls();
+      renderChart();
+      renderComposition();
+      renderTable();
+    };
+
+    $('kpiMasuk').textContent = rpJuta(TOTAL.masuk);
+    $('kpiKeluar').textContent = rpJuta(TOTAL.keluar);
+    $('kpiNet').textContent = rpJuta(TOTAL.net);
+    $('kpiRasio').textContent = pctText(TOTAL.masuk / TOTAL.keluar * 100);
+
+    document.querySelectorAll('.pov-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (pov === btn.dataset.pov) return;
+        pov = btn.dataset.pov;
+        sortKey = null;
+        sortDir = -1;
+        renderAll();
+      });
+    });
+
+    $('tableSearch').addEventListener('input', event => {
+      query = event.target.value.trim().toLowerCase();
+      renderTable();
+    });
+
+    $('detailTable').addEventListener('click', event => {
+      const th = event.target.closest('th.sortable');
+      if (!th) return;
+      const key = th.dataset.key;
+      if (effectiveKey() === key) {
+        sortDir = effectiveDir() * -1;
+        sortKey = key;
+      } else {
+        sortKey = key;
+        sortDir = key === 'name' ? 1 : -1;
+      }
+      renderTable();
+    });
+
+    renderAll();
+  </script>
+</body>
+</html>

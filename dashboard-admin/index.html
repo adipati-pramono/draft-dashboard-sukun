@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171412" />
+  <meta name="description" content="Dashboard admin master data customer Sukun Group — daftar toko, pencarian, filter cabang, dan mapping customer." />
+  <title>Master Data Customer — Sukun Group</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d97706'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+      <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+    </symbol>
+    <symbol id="i-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/><path d="M21 3v5h-5"/>
+      <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/><path d="M3 21v-5h5"/>
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>
+      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>
+    </symbol>
+    <symbol id="i-arrow-right-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+      <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <div class="brand-name">SUKUN<span>GROUP</span></div>
+          <div class="brand-sub">Admin Panel</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navigasi admin">
+        <div class="nav-group">
+          <div class="nav-label">Ringkasan</div>
+          <a class="nav-link active" href="#overview" data-nav="overview">
+            <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Dashboard
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Master Data</div>
+          <a class="nav-link" href="#customers" data-nav="customers">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Customer Toko
+          </a>
+          <a class="nav-link" href="#mapping" data-nav="mapping">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right-left"/></svg>Mapping Cabang
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">Laporan</div>
+          <a class="nav-link" href="../dashboard-bi/index.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>BI Dashboard
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="user">
+          <div class="avatar">AD</div>
+          <div>
+            <div class="user-name">Admin Sukun</div>
+            <div class="user-role">Master Data Admin</div>
+          </div>
+        </div>
+        <div class="copy">© 2026 Sukun Group</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          </button>
+          <div class="search">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input type="search" placeholder="Cari kode, nama toko, atau kota…" aria-label="Cari customer" />
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="period" aria-label="Tahun buku">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            <span class="period-static">Tahun Buku 2026</span>
+          </div>
+          <button class="icon-btn" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+            <span class="dot-alert"></span>
+          </button>
+          <div class="avatar sm">AD</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="page-head" id="overview">
+          <div>
+            <h1>Master Data Customer</h1>
+            <p>Kelola daftar toko, pencarian, filter cabang, dan pemetaan customer.</p>
+          </div>
+          <div class="page-actions">
+            <span class="updated"><span class="live-dot"></span>Data per 22 Nov 2026</span>
+            <button type="button" class="btn ghost" id="btnReset">
+              <svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Reset Data
+            </button>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi">
+            <div class="kpi-top">
+              <span class="kpi-icon amber"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <span class="badge neutral">Master data</span>
+            </div>
+            <div>
+              <div class="kpi-label">Total Toko</div>
+              <div class="kpi-value" id="kpiTotal">—</div>
+            </div>
+            <div class="kpi-foot"><span class="kpi-note" id="kpiTotalNote">Memuat data…</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <span class="kpi-icon teal"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <span class="badge ok">Aktif</span>
+            </div>
+            <div>
+              <div class="kpi-label">Toko Aktif</div>
+              <div class="kpi-value" id="kpiAktif">—</div>
+            </div>
+            <div class="kpi-foot"><span class="kpi-note" id="kpiAktifNote">Memuat data…</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <span class="kpi-icon rose"><svg class="icon" aria-hidden="true"><use href="#i-credit-card"/></svg></span>
+              <span class="badge neutral">Outstanding</span>
+            </div>
+            <div>
+              <div class="kpi-label">Piutang Toko</div>
+              <div class="kpi-value" id="kpiPiutang">—</div>
+            </div>
+            <div class="kpi-foot"><span class="kpi-note" id="kpiPiutangNote">Memuat data…</span></div>
+          </article>
+
+          <article class="kpi">
+            <div class="kpi-top">
+              <span class="kpi-icon indigo"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg></span>
+              <span class="badge warn" id="kpiUnmappedBadge">Perlu mapping</span>
+            </div>
+            <div>
+              <div class="kpi-label">Belum Ter-mapping</div>
+              <div class="kpi-value" id="kpiUnmapped">—</div>
+            </div>
+            <div class="kpi-foot"><span class="kpi-note" id="kpiUnmappedNote">Memuat data…</span></div>
+          </article>
+        </div>
+
+        <section class="card" id="customers" aria-labelledby="h-customers">
+          <div class="card-head">
+            <div>
+              <h2 id="h-customers">Daftar Customer</h2>
+              <p>Master data toko Sukun Group — pencarian, filter, mapping, dan penghapusan.</p>
+            </div>
+            <div class="card-tools">
+              <span class="badge neutral" id="tableCountBadge">—</span>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="table-search">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <input type="search" id="tableSearch" placeholder="Cari kode, nama toko, kota, atau telepon…" autocomplete="off" aria-label="Cari customer" />
+            </div>
+            <div class="filter-select">
+              <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+              <select id="branchFilter" aria-label="Filter cabang">
+                <option value="all">Semua Cabang</option>
+              </select>
+            </div>
+            <div class="toolbar-spacer"></div>
+            <span class="toolbar-hint">Centang customer untuk mapping massal.</span>
+          </div>
+
+          <div class="bulk-bar" id="bulkBar" hidden>
+            <span><b id="bulkCount">0</b> customer dipilih</span>
+            <div class="bulk-actions">
+              <button type="button" class="btn sm ghost" id="bulkMap">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right-left"/></svg>Pindahkan Cabang
+              </button>
+              <button type="button" class="btn sm danger" id="bulkDelete">
+                <svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>Hapus
+              </button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table admin-table">
+              <thead>
+                <tr>
+                  <th class="check-cell"><input type="checkbox" id="checkAll" aria-label="Pilih semua customer di halaman ini" /></th>
+                  <th>Kode</th>
+                  <th>Toko</th>
+                  <th>Cabang</th>
+                  <th>Segmen</th>
+                  <th class="num">Omzet</th>
+                  <th class="num">Piutang</th>
+                  <th>Status</th>
+                  <th class="num">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="customerRows"></tbody>
+            </table>
+          </div>
+
+          <div class="table-foot">
+            <span id="tableRange">Memuat data…</span>
+            <div class="pagination" id="pagination" aria-label="Navigasi halaman"></div>
+          </div>
+        </section>
+
+        <section class="card" id="mapping" aria-labelledby="h-mapping">
+          <div class="card-head">
+            <div>
+              <h2 id="h-mapping">Mapping Customer per Cabang</h2>
+              <p>Klik kartu cabang untuk memfilter daftar di atas, lalu gunakan aksi pindah pada baris customer.</p>
+            </div>
+            <div class="card-tools">
+              <span class="badge info" id="mappingBadge">6 cabang</span>
+            </div>
+          </div>
+          <div class="branch-grid" id="branchGrid"></div>
+          <p class="mapping-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+            Customer “Belum ter-mapping” belum memiliki cabang dan perlu ditugaskan.
+          </p>
+        </section>
+
+        <p class="page-note">Dashboard admin contoh — perubahan mapping dan penghapusan disimpan di localStorage browser ini.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="mapModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mapTitle" aria-describedby="mapSubtitle">
+      <div class="modal-head">
+        <div>
+          <h2 id="mapTitle">Pindahkan Customer</h2>
+          <p id="mapSubtitle">Pilih cabang tujuan.</p>
+        </div>
+        <button type="button" class="icon-btn xs" data-close="mapModal" aria-label="Tutup">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="selected-box" id="mapSelection"></div>
+        <label class="field">
+          <span>Cabang tujuan</span>
+          <div class="filter-select">
+            <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+            <select id="mapBranch" aria-label="Cabang tujuan">
+              <option value="">Pilih cabang…</option>
+            </select>
+          </div>
+        </label>
+        <p class="modal-note">Mapping akan memperbarui cabang untuk semua customer terpilih.</p>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn ghost" data-close="mapModal">Batal</button>
+        <button type="button" class="btn" id="mapConfirm" disabled>
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Simpan Mapping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="confirmModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMessage">
+      <div class="modal-head">
+        <div class="confirm-body">
+          <span class="confirm-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>
+          <div>
+            <h2 id="confirmTitle">Konfirmasi</h2>
+            <p id="confirmMessage"></p>
+          </div>
+        </div>
+        <button type="button" class="icon-btn xs" data-close="confirmModal" aria-label="Tutup">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn ghost" data-close="confirmModal">Batal</button>
+        <button type="button" class="btn danger" id="confirmAction">Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/customers.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
